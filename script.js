@@ -23,7 +23,7 @@ function LoaderRemover() {
     delay: 2,
     onEnd: function () {
       setTimeout(() => (loader.style.display = "none"), 1000);
-      MainContent.style.display = "flex";
+      MainContent.style.display = "inline-block";
     },
   }).to(".MainContent", {
     duration: 2,
