@@ -11,3 +11,19 @@ function coundown() {
   }, 20);
 }
 coundown();
+let MainContent = document.querySelector(".MainContent");
+let loader = document.querySelector(".Loader");
+let tl = gsap.timeline();
+
+tl.to(".Loader", {
+  duration: 1,
+  y: "-100%",
+  delay: 2,
+  onEnd: function () {
+    setTimeout(() => (loader.style.display = "none"), 1000);
+    MainContent.style.display = "flex"
+  },
+}).to(".MainContent", {
+  duration: 2,
+  y: "-100%",
+});
