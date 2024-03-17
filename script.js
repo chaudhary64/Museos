@@ -27,7 +27,7 @@ function LoaderRemover() {
     },
   }).to(".MainContent", {
     duration: 2,
-    y: "-100%",
+    top : 0,
   });
 }
 LoaderRemover();
