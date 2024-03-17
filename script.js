@@ -28,7 +28,16 @@ function LoaderRemover() {
   }).to(".MainContent", {
     duration: 1.8,
     top: 0,
-  });
+  }).to([".jmb","#wordSpaceReducing"], {
+    duration: 1.8,
+    top: 0,
+    delay: -1,
+  }).to("nav p", {
+    top: 0,
+    duration: 1,
+    delay: -2.5,
+    stagger: 0.4,
+  })
 }
 LoaderRemover();
 
