@@ -113,7 +113,10 @@ function yearIncreser() {
     if (initialYear === 1899) {
       clearTimeout(increaser);
     }
-    console.log(yi.textContent);
   }, 0.0001);
 }
 yearIncreser();
+
+let intro = document.querySelector(".Introduction");
+let zeroPara = document.querySelector("#zeroPara");
+let textMoveUp = document.querySelector("#textMoveUp");
