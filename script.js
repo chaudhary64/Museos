@@ -100,3 +100,14 @@ function imageGatherer() {
   });
 }
 imageGatherer();
+
+let yi = document.querySelector("#yearIncrease");
+let initialYear = 1000;
+let increaser = setInterval(() => {
+  yi.textContent = initialYear;
+  initialYear++;
+  if (initialYear === 1899) {
+    clearTimeout(increaser);
+  }
+  console.log(yi.textContent);
+}, 0.0001);
