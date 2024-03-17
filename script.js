@@ -25,19 +25,22 @@ function LoaderRemover() {
       setTimeout(() => (loader.style.display = "none"), 1000);
       MainContent.style.display = "inline-block";
     },
-  }).to(".MainContent", {
-    duration: 1.8,
-    top: 0,
-  }).to([".jmb","#wordSpaceReducing"], {
-    duration: 1.8,
-    top: 0,
-    delay: -1,
-  }).to("nav p", {
-    top: 0,
-    duration: 1,
-    delay: -2.5,
-    stagger: 0.4,
   })
+    .to(".MainContent", {
+      duration: 1.8,
+      top: 0,
+    })
+    .to([".jmb", "#wordSpaceReducing"], {
+      duration: 1.8,
+      top: 0,
+      delay: -1,
+    })
+    .to("nav p", {
+      top: 0,
+      duration: 1,
+      delay: -2.5,
+      stagger: 0.4,
+    });
 }
 LoaderRemover();
 
@@ -101,13 +104,16 @@ function imageGatherer() {
 }
 imageGatherer();
 
-let yi = document.querySelector("#yearIncrease");
-let initialYear = 1000;
-let increaser = setInterval(() => {
-  yi.textContent = initialYear;
-  initialYear++;
-  if (initialYear === 1899) {
-    clearTimeout(increaser);
-  }
-  console.log(yi.textContent);
-}, 0.0001);
+function yearIncreser() {
+  let yi = document.querySelector("#yearIncrease");
+  let initialYear = 1000;
+  let increaser = setInterval(() => {
+    yi.textContent = initialYear;
+    initialYear++;
+    if (initialYear === 1899) {
+      clearTimeout(increaser);
+    }
+    console.log(yi.textContent);
+  }, 0.0001);
+}
+yearIncreser();
