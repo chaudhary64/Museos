@@ -26,7 +26,7 @@ function LoaderRemover() {
       MainContent.style.display = "inline-block";
     },
   }).to(".MainContent", {
-    duration: 2,
+    duration: 1.8,
     top : 0,
   });
 }
