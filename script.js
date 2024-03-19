@@ -30,7 +30,7 @@ function LoaderRemover() {
       duration: 1.8,
       top: 0,
     })
-    .to([".jmb", "#wordSpaceReducing"], {
+    .to(["#jmb", "#wordSpaceReducing"], {
       duration: 1.8,
       top: 0,
       delay: -1,
