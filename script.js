@@ -91,3 +91,37 @@ function ImageGatherer() {
   });
 }
 ImageGatherer();
+
+function YearIncreser() {
+  let YearContainer = document.querySelector("#YearContainer");
+
+  let sid0 = document.querySelector(".stripId0");
+  let sid1 = document.querySelector(".stripId1");
+  let sid2 = document.querySelector(".stripId2");
+  let sid3 = document.querySelector(".stripId3");
+
+  function moveTheStrip(stripID, distance, a, b) {
+    gsap.to(stripID, {
+      y: `-${distance}%`,
+      duration: a,
+      delay: b,
+      ease: "power1.inOut",
+    });
+  }
+
+  gsap.to(YearContainer, {
+    scrollTrigger: {
+      trigger: YearContainer,
+      start: "top 90%",
+      end: "10% 10%",
+      scrub: true,
+    },
+    onStart: function () {
+      moveTheStrip(sid3, 800, 2.5, 0);
+      moveTheStrip(sid2, 900, 2.5, 0.5);
+      moveTheStrip(sid1, 800, 2.5, 1);
+      moveTheStrip(sid0, 100, 1.8, 1.8);
+    },
+  });
+}
+YearIncreser();
