@@ -19,17 +19,9 @@ function LoaderRemover() {
 
   tl.to(".Loader", {
     duration: 1,
-    y: "-100%",
+    height: 0,
     delay: 2,
-    onEnd: function () {
-      setTimeout(() => (loader.style.display = "none"), 1000);
-      MainContent.style.display = "inline-block";
-    },
   })
-    .to(".MainContent", {
-      duration: 1.8,
-      top: 0,
-    })
     .to(["#jmb", "#wordSpaceReducing"], {
       duration: 1.8,
       top: 0,
@@ -45,7 +37,6 @@ function LoaderRemover() {
 LoaderRemover();
 
 function imageGatherer() {
-
   gsap.to("#ip1", {
     objectPosition: "top",
     scale: 1,
@@ -56,7 +47,6 @@ function imageGatherer() {
       scrub: 5,
       start: `top 30%`,
       end: `bottom 20%`,
-      markers: true,
     },
   });
 
@@ -98,7 +88,7 @@ function imageGatherer() {
       end: `430px 20%`,
     },
   });
-  
+
   gsap.to("#ip5", {
     objectPosition: "0% -130vh",
     scale: 1,
@@ -113,4 +103,3 @@ function imageGatherer() {
   });
 }
 imageGatherer();
-
