@@ -21,10 +21,10 @@ function LoaderRemover() {
     duration: 1,
     height: 0,
     delay: 2,
-    onComplete: function() {
+    onComplete: function () {
       // Refresh the ScrollTrigger after loader animation is completed
       ScrollTrigger.refresh();
-    }
+    },
   })
     .to(["#jmb", "#wordSpaceReducing"], {
       duration: 1.8,
@@ -40,51 +40,54 @@ function LoaderRemover() {
 }
 LoaderRemover();
 
-let img1 = document.querySelector(".img1");
-let img2 = document.querySelector(".img2");
-let img3 = document.querySelector(".img3");
-let img4 = document.querySelector(".img4");
+function ImageGatherer() {
+  let img1 = document.querySelector(".img1");
+  let img2 = document.querySelector(".img2");
+  let img3 = document.querySelector(".img3");
+  let img4 = document.querySelector(".img4");
 
-gsap.to(".img1", {
-  scale : 1,
-  objectPosition: "0 0",
-  scrollTrigger: {
-    trigger: ".imgcont1",
-    start: "10% 55%",
-    end: "bottom 20%",
-    scrub: true,
-  },
-});
+  gsap.to(".img1", {
+    scale: 1,
+    objectPosition: "0 0",
+    scrollTrigger: {
+      trigger: ".imgcont1",
+      start: "10% 55%",
+      end: "bottom 20%",
+      scrub: true,
+    },
+  });
 
-gsap.to(".img2", {
-  scale : 1,
-  objectPosition: "0 -20vh",
-  scrollTrigger: {
-    trigger: ".imgcont2",
-    start: "top 75%",
-    end: "40% 70%",
-    scrub: true,
-  },
-});
+  gsap.to(".img2", {
+    scale: 1,
+    objectPosition: "0 -20vh",
+    scrollTrigger: {
+      trigger: ".imgcont2",
+      start: "top 75%",
+      end: "40% 70%",
+      scrub: true,
+    },
+  });
 
-gsap.to(".img3", {
-  scale : 1,
-  objectPosition: "0 -100vh",
-  scrollTrigger: {
-    trigger: ".imgcont3",
-    start: "top 95%",
-    end: "30% 80%",
-    scrub: true,
-  },
-});
+  gsap.to(".img3", {
+    scale: 1,
+    objectPosition: "0 -100vh",
+    scrollTrigger: {
+      trigger: ".imgcont3",
+      start: "top 95%",
+      end: "30% 80%",
+      scrub: true,
+    },
+  });
 
-gsap.to(".img4", {
-  scale : 1,
-  objectPosition: "0 -140vh",
-  scrollTrigger: {
-    trigger: ".imgcont4",
-    start: "top 100%",
-    end: "30% 90%",
-    scrub: true,
-  },
-});
+  gsap.to(".img4", {
+    scale: 1,
+    objectPosition: "0 -140vh",
+    scrollTrigger: {
+      trigger: ".imgcont4",
+      start: "top 100%",
+      end: "30% 90%",
+      scrub: true,
+    },
+  });
+}
+ImageGatherer();
