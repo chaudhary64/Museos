@@ -45,21 +45,18 @@ function LoaderRemover() {
 LoaderRemover();
 
 function imageGatherer() {
-  let ip1 = document.querySelector("#ip1");
-  let ip2 = document.querySelector("#ip2");
-  let ip3 = document.querySelector("#ip3");
-  let ip4 = document.querySelector("#ip4");
 
   gsap.to("#ip1", {
     objectPosition: "top",
     scale: 1,
     stagger: 0.5,
     scrollTrigger: {
-      trigger: "#ip1",
+      trigger: "#ImageContainer",
       scroll: "body",
       scrub: 5,
-      start: "400px 30%",
-      end: "500px 20%",
+      start: `top 30%`,
+      end: `bottom 20%`,
+      markers: true,
     },
   });
 
@@ -71,8 +68,8 @@ function imageGatherer() {
       trigger: "#ip2",
       scroll: "body",
       scrub: 5,
-      start: "400px 30%",
-      end: "430px 20%",
+      start: `400px 30%`,
+      end: `430px 20%`,
     },
   });
 
@@ -84,8 +81,8 @@ function imageGatherer() {
       trigger: "#ip3",
       scroll: "body",
       scrub: 5,
-      start: "400px 30%",
-      end: "430px 20%",
+      start: `400px 30%`,
+      end: `430px 20%`,
     },
   });
 
@@ -97,26 +94,23 @@ function imageGatherer() {
       trigger: "#ip4",
       scroll: "body",
       scrub: 5,
-      start: "400px 30%",
-      end: "430px 20%",
+      start: `400px 30%`,
+      end: `430px 20%`,
+    },
+  });
+  
+  gsap.to("#ip5", {
+    objectPosition: "0% -130vh",
+    scale: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+      trigger: "#ip4",
+      scroll: "body",
+      scrub: 5,
+      start: `400px 30%`,
+      end: `430px 20%`,
     },
   });
 }
 imageGatherer();
 
-function yearIncreser() {
-  let yi = document.querySelector("#yearIncrease");
-  let initialYear = 1000;
-  let increaser = setInterval(() => {
-    yi.textContent = initialYear;
-    initialYear++;
-    if (initialYear === 1899) {
-      clearTimeout(increaser);
-    }
-  }, 0.0001);
-}
-yearIncreser();
-
-let intro = document.querySelector(".Introduction");
-let zeroPara = document.querySelector("#zeroPara");
-let textMoveUp = document.querySelector("#textMoveUp");
