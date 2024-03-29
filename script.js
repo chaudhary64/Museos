@@ -53,7 +53,6 @@ gsap.to(".img1", {
     start: "10% 55%",
     end: "bottom 20%",
     scrub: true,
-    // markers: true,
   },
 });
 
@@ -65,7 +64,6 @@ gsap.to(".img2", {
     start: "top 75%",
     end: "40% 70%",
     scrub: true,
-    // markers: true,
   },
 });
 
@@ -77,7 +75,6 @@ gsap.to(".img3", {
     start: "top 95%",
     end: "30% 80%",
     scrub: true,
-    // markers: true,
   },
 });
 
@@ -89,6 +86,5 @@ gsap.to(".img4", {
     start: "top 100%",
     end: "30% 90%",
     scrub: true,
-    markers: true,
   },
 });
