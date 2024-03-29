@@ -9,27 +9,19 @@
 }
 
 /* Setting Random postions of the images inside ImageContainer div */
-#ip1 {
-    scale: 1.2;
-    object-position: 2vw -2vh;
+.img1{
+    scale: 1.5;
+    object-position: 0 -30vh;
 }
-
-#ip2 {
-    scale: 1.55;
-    object-position: -10vw -30vh;
+.img2{
+    scale: 3;
+    object-position: 0 -2vh;
 }
-
- #ip3 {
-    scale: 1.7;
-    object-position: 15vw -40vh;
+.img3{
+    scale: 2;
+    object-position: 0 -10vh;
 }
-
-#ip4 {
-    scale: 1.9;
-    object-position: -9vw -70vh;
-}
-
-#ip5 {
-    scale: 1.9;
-    object-position: -9vw -70vh;
+.img4{
+    scale: 2;
+    object-position: 0 -15vh;
 }
