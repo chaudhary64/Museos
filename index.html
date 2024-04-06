@@ -15,7 +15,7 @@
     <title>Resurgence of the Homeland / Museums for the 21st Century</title>
 </head>
 
-<body>
+<body class="bg-black">
     <div class="Loader h-screen w-full flex items-end text-8xl overflow-hidden">
         <p class="m-4" id="counter">100</p>
     </div>
@@ -126,46 +126,73 @@
             </div>
         </div>
         <!-- Strips -->
-        <div id="Strips" class="h-[55vh] w-full border-2 border-[#8B8A8A] bg-black text-white">
-            <div class="strip1 h-[33.33%] w-full flex px-[2vw] border-b-2 border-[#8B8A8A]">
-                <div class="LEFT h-full w-1/2 flex justify-start items-center gap-[2%] border-2 border-black">
+        <div id="Strips" class="h-[55vh] w-full border-2 border-[#8B8A8A] text-white">
+            <!-- Strip1 -->
+            <div class="strip1 h-[33.33%] w-full flex px-[2vw] border-b-2 border-[#8B8A8A] relative">
+                <!-- Left Part -->
+                <div class="LEFT h-full w-1/2 flex justify-start items-center gap-[2%]">
+                    <!-- Play button -->
                     <div
-                        class="PLAY h-[50px] w-[50px] border-2 border-[#FFCFCF] rounded-full flex justify-center items-center">
-                        <i class="ri-play-fill text-white text-xl"></i></div>
+                        class="PLAY h-[50px] w-[50px] bg-black border-2 border-[#FFCFCF] rounded-full flex justify-center items-center">
+                        <i id="s1Play" class="ri-play-fill text-white text-xl"></i>
+                    </div>
+                    <!-- Text -->
                     <div class="TEXT h-[10vh] text-[3vw]">ADULTS</div>
+                    <!-- Time -->
                     <div class="TIME h-[6vh]">
                         <p>3:59 min.</p>
                     </div>
                 </div>
-                <div class="RIGHT h-full w-1/2 flex justify-end items-center border-2 border-black text-xl"> Patricia
+                <!-- Right Part -->
+                <div class="RIGHT h-full w-1/2 flex justify-end items-center text-xl"> Patricia
                     Lannes,
                     Educator's Voice </div>
+                <!-- Covering Div -->
+                <div class="cover1 h-full w-0 bg-[#FFFFFF] absolute top-0 left-0 z-[-1]"></div>
             </div>
-            <div class="strip2 h-[33.33%] w-full flex px-[2vw] border-b-2 border-[#8B8A8A]">
-                <div class="LEFT h-full w-1/2 flex justify-start items-center gap-[2%] border-2 border-black">
+            <!-- Strip2 -->
+            <div class="strip2 h-[33.33%] w-full flex px-[2vw] border-b-2 border-[#8B8A8A] relative">
+                <!-- Left Part -->
+                <div class="LEFT h-full w-1/2 flex justify-start items-center gap-[2%]">
+                    <!-- Play Button -->
                     <div
-                        class="PLAY h-[50px] w-[50px] border-2 border-[#FFCFCF] rounded-full flex justify-center items-center">
-                        <i class="ri-play-fill text-white text-xl"></i></div>
+                        class="PLAY h-[50px] w-[50px] bg-black border-2 border-[#FFCFCF] rounded-full flex justify-center items-center">
+                        <i id="s2Play" class="ri-play-fill text-white text-xl"></i>
+                    </div>
+                    <!-- Text -->
                     <div class="TEXT h-[10vh] text-[3vw]">ADULTS</div>
+                    <!-- Time -->
                     <div class="TIME h-[6vh]">
                         <p>5:48 min.</p>
                     </div>
                 </div>
-                <div class="RIGHT h-full w-1/2 flex justify-end items-center border-2 border-black text-xl"> Mónica
+                <!-- Right Part -->
+                <div class="RIGHT h-full w-1/2 flex justify-end items-center text-xl"> Mónica
                     Michelena, Charrúa Rep. </div>
+                <!-- Covering Div -->
+                <div class="cover2 h-full w-0 bg-[#FFFFFF] absolute top-0 left-0 z-[-1]"></div>
             </div>
-            <div class="strip3 h-[33.33%] w-full flex px-[2vw]">
-                <div class="LEFT h-full w-1/2 flex justify-start items-center gap-[2%] border-2 border-black">
+            <!-- Strip3 -->
+            <div class="strip3 h-[33.33%] w-full flex px-[2vw] relative">
+                <!-- Left Part -->
+                <div class="LEFT h-full w-1/2 flex justify-start items-center gap-[2%]">
+                    <!-- Play Button -->
                     <div
-                        class="PLAY h-[50px] w-[50px] border-2 border-[#FFCFCF] rounded-full flex justify-center items-center">
-                        <i class="ri-play-fill text-white text-xl"></i></div>
+                        class="PLAY h-[50px] w-[50px] bg-black border-2 border-[#FFCFCF] rounded-full flex justify-center items-center">
+                        <i id="s3Play" class="ri-play-fill text-white text-xl"></i>
+                    </div>
+                    <!-- Text -->
                     <div class="TEXT h-[10vh] text-[3vw]"> Children </div>
+                    <!-- Time -->
                     <div class="TIME h-[6vh]">
                         <p> 1:16 min.</p>
                     </div>
                 </div>
-                <div class="RIGHT h-full w-1/2 flex justify-end items-center border-2 border-black text-xl"> Mariana
+                <!-- Right Part -->
+                <div class="RIGHT h-full w-1/2 flex justify-end items-center text-xl"> Mariana
                     Valdés, Arte y Educación's Voice </div>
+                <!-- Covering Div -->
+                <div class="cover3 h-full w-0 bg-[#FFFFFF] absolute top-0 left-0 z-[-1]"></div>
             </div>
         </div>
     </div>

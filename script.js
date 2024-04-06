@@ -125,3 +125,72 @@ function YearIncreser() {
   });
 }
 YearIncreser();
+
+function CoverTheStrip() {
+  let strip1 = document.querySelector(".strip1");
+  let strip2 = document.querySelector(".strip2");
+  let strip3 = document.querySelector(".strip3");
+
+  let cover1 = document.querySelector(".cover1");
+  let cover2 = document.querySelector(".cover2");
+  let cover3 = document.querySelector(".cover3");
+
+  function cover(elem) {
+    if (elem === strip1) {
+      elem.addEventListener("mouseenter", () => {
+        gsap.to(cover1, {
+          width: "100%",
+          duration: 0.3,
+          ease: "power1.inOut",
+        });
+        elem.style.color = "black";
+      });
+      elem.addEventListener("mouseleave", () => {
+        gsap.to(cover1, {
+          width: "0%",
+          duration: 0.3,
+          ease: "power1.inOut",
+        });
+        elem.style.color = "white";
+      });
+    } else if (elem === strip2) {
+      elem.addEventListener("mouseenter", () => {
+        gsap.to(cover2, {
+          width: "100%",
+          duration: 0.3,
+          ease: "power1.inOut",
+        });
+        elem.style.color = "black";
+      });
+      elem.addEventListener("mouseleave", () => {
+        gsap.to(cover2, {
+          width: "0%",
+          duration: 0.3,
+          ease: "power1.inOut",
+        });
+        elem.style.color = "white";
+      });
+    } else if (elem === strip3) {
+      elem.addEventListener("mouseenter", () => {
+        gsap.to(cover3, {
+          width: "100%",
+          duration: 0.3,
+          ease: "power1.inOut",
+        });
+        elem.style.color = "black";
+      });
+      elem.addEventListener("mouseleave", () => {
+        gsap.to(cover3, {
+          width: "0%",
+          duration: 0.3,
+          ease: "power1.inOut",
+        });
+        elem.style.color = "white";
+      });
+    }
+  }
+  cover(strip1);
+  cover(strip2);
+  cover(strip3);
+}
+CoverTheStrip();
