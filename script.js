@@ -135,62 +135,29 @@ function CoverTheStrip() {
   let cover2 = document.querySelector(".cover2");
   let cover3 = document.querySelector(".cover3");
 
-  function cover(elem) {
-    if (elem === strip1) {
-      elem.addEventListener("mouseenter", () => {
-        gsap.to(cover1, {
-          width: "100%",
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-        elem.style.color = "black";
+  function coverIt(elem , cover) {
+    // Mouseenetr Event
+    elem.addEventListener("mouseenter", () => {
+      gsap.to(cover, {
+        width: "100%",
+        duration: 0.3,
+        ease: "power1.inOut",
       });
-      elem.addEventListener("mouseleave", () => {
-        gsap.to(cover1, {
-          width: "0%",
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-        elem.style.color = "white";
+      elem.style.color = "black";
+    });
+    
+    // Mouseleave Event
+    elem.addEventListener("mouseleave", () => {
+      gsap.to(cover, {
+        width: "0%",
+        duration: 0.3,
+        ease: "power1.inOut",
       });
-    } else if (elem === strip2) {
-      elem.addEventListener("mouseenter", () => {
-        gsap.to(cover2, {
-          width: "100%",
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-        elem.style.color = "black";
-      });
-      elem.addEventListener("mouseleave", () => {
-        gsap.to(cover2, {
-          width: "0%",
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-        elem.style.color = "white";
-      });
-    } else if (elem === strip3) {
-      elem.addEventListener("mouseenter", () => {
-        gsap.to(cover3, {
-          width: "100%",
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-        elem.style.color = "black";
-      });
-      elem.addEventListener("mouseleave", () => {
-        gsap.to(cover3, {
-          width: "0%",
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-        elem.style.color = "white";
-      });
-    }
+      elem.style.color = "white";
+    });
   }
-  cover(strip1);
-  cover(strip2);
-  cover(strip3);
+  coverIt(strip1,cover1);
+  coverIt(strip2,cover2);
+  coverIt(strip3,cover3);
 }
 CoverTheStrip();
