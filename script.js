@@ -144,6 +144,7 @@ function CoverTheStrip() {
         ease: "power1.inOut",
       });
       elem.style.color = "black";
+      elem.style.transition = "transform 0.3s"
       elem.style.transform = "TranslateX(2%)"
     });
 
