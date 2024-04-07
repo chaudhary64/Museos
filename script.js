@@ -144,8 +144,9 @@ function CoverTheStrip() {
         ease: "power1.inOut",
       });
       elem.style.color = "black";
+      elem.style.transform = "TranslateX(2%)"
     });
-    
+
     // Mouseleave Event
     elem.addEventListener("mouseleave", () => {
       gsap.to(cover, {
@@ -154,6 +155,7 @@ function CoverTheStrip() {
         ease: "power1.inOut",
       });
       elem.style.color = "white";
+      elem.style.transform = "TranslateX(0%)"
     });
   }
   coverIt(strip1,cover1);
