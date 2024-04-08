@@ -50,6 +50,6 @@ body {
     }
     
     100% {
-        transform: scaleY(1.5);
+        transform: scaleY(1.4);
     }
 }
