@@ -37,18 +37,18 @@
                 RESURGENCE OF THE HOMELAND</p>
         </div>
         <!-- ImageContainer -->
-        <div id="ImageContainer" class="h-fit w-full">
-            <div class="imgcont1 h-[20vh] w-full overflow-hidden">
-                <img class="img1 object-cover" src="/images/page1_full.webp" alt="">
-            </div>
-            <div class="imgcont2 h-[80vh] w-full overflow-hidden">
-                <img class="img2 object-cover" src="/images/page1_full.webp" alt="">
-            </div>
-            <div class="imgcont3 h-[40vh] w-full overflow-hidden">
-                <img class="img3 object-cover" src="/images/page1_full.webp" alt="">
-            </div>
-            <div class="imgcont4 h-[35vh] w-full overflow-hidden">
-                <img class="img4 object-cover" src="/images/page1_full.webp" alt="">
+        <div id="ImageContainer"
+            class="h-[70vh] sm:h-[100vh] md:h-[130vh] lg:h-[170vh] w-full overflow-hidden relative">
+
+            <!-- Image covering the full ImageContainer div -->
+            <img id="upperAndLowerImg" class="objcet-cover h-full w-full scale-[2.1] translate-x-[10%]"
+                src="images/page1_full.webp" alt="">
+
+            <!-- Center Image container div that comes in the center of ImageContainer div -->
+            <div class="absolute top-1/2 left-0 -translate-y-1/2 h-1/3 w-full overflow-hidden">
+                <img id="centerImg"
+                    class="h-[70vh] sm:h-[100vh] md:h-[130vh] lg:h-[170vh] w-full relative top-1/2 left-0 -translate-y-1/2 -translate-x-[25%] scale-[1.9]"
+                    src="images/page1_full.webp" alt="">
             </div>
         </div>
         <!-- YearCounter -->
