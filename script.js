@@ -143,48 +143,51 @@ function CoverTheStrip() {
 }
 CoverTheStrip();
 
-let pb = document.querySelector("#progressBar");
+function pinnedSectionAnimation() {
+  let pb = document.querySelector("#progressBar");
 
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#PinnedSection",
-    start: "top 0%",
-    end: "bottom -400%",
-    scrub: 3,
-    pin: true,
-    onUpdate: (self) => {
-      pb.style.width = self.progress.toFixed(2) * 100 + "%"; // Gettin the progress value and converting it to percentage
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#PinnedSection",
+      start: "top 0%",
+      end: "bottom -400%",
+      scrub: 3,
+      pin: true,
+      onUpdate: (self) => {
+        pb.style.width = self.progress.toFixed(2) * 100 + "%"; // Gettin the progress value and converting it to percentage
+      },
     },
-  },
-});
-
-tl.to("#clipPath", {
-  clipPath: "circle(13% at 53% 63%)",
-  ease: "power1.inOut",
-  force3D: true, // Enable hardware acceleration
-})
-  .to("#clipPath", {
-    clipPath: "circle(13% at 28% 63%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
-  })
-  .to("#clipPath", {
-    clipPath: "circle(13% at 62% 65%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
-  })
-  .to("#clipPath", {
-    clipPath: "circle(9% at 47% 35%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
-  })
-  .to("#clipPath", {
-    clipPath: "circle(10% at 14% 58%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
-  })
-  .to("#clipPath", {
-    clipPath: "circle(100% at 50% 50%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
   });
+
+  tl.to("#clipPath", {
+    clipPath: "circle(13% at 53% 63%)",
+    ease: "power1.inOut",
+    force3D: true, // Enable hardware acceleration
+  })
+    .to("#clipPath", {
+      clipPath: "circle(13% at 28% 63%)",
+      ease: "power1.inOut",
+      force3D: true, // Enable hardware acceleration
+    })
+    .to("#clipPath", {
+      clipPath: "circle(13% at 62% 65%)",
+      ease: "power1.inOut",
+      force3D: true, // Enable hardware acceleration
+    })
+    .to("#clipPath", {
+      clipPath: "circle(9% at 47% 35%)",
+      ease: "power1.inOut",
+      force3D: true, // Enable hardware acceleration
+    })
+    .to("#clipPath", {
+      clipPath: "circle(10% at 14% 58%)",
+      ease: "power1.inOut",
+      force3D: true, // Enable hardware acceleration
+    })
+    .to("#clipPath", {
+      clipPath: "circle(100% at 50% 50%)",
+      ease: "power1.inOut",
+      force3D: true, // Enable hardware acceleration
+    });
+}
+pinnedSectionAnimation();
