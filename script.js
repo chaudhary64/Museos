@@ -143,13 +143,18 @@ function CoverTheStrip() {
 }
 CoverTheStrip();
 
+let pb = document.querySelector("#progressBar");
+
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: "#PinnedSection",
     start: "top 0%",
     end: "bottom -400%",
-    scrub: 5,
+    scrub: 3,
     pin: true,
+    onUpdate: (self) => {
+      pb.style.width = self.progress.toFixed(2) * 100 + "%"; // Gettin the progress value and converting it to percentage
+    },
   },
 });
 
