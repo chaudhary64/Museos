@@ -142,3 +142,34 @@ function CoverTheStrip() {
   coverIt(strip3, cover3);
 }
 CoverTheStrip();
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#PinnedSection",
+    start: "top 0%",
+    end: "bottom -400%",
+    scrub: 5,
+    pin: true,
+  },
+});
+
+tl.to("#clipPath", {
+  clipPath: "circle(13% at 28% 63%)",
+  ease: "power1.inOut",
+})
+  .to("#clipPath", {
+    clipPath: "circle(13% at 62% 65%)",
+    ease: "power1.inOut",
+  })
+  .to("#clipPath", {
+    clipPath: "circle(9% at 47% 35%)",
+    ease: "power1.inOut",
+  })
+  .to("#clipPath", {
+    clipPath: "circle(10% at 14% 58%)",
+    ease: "power1.inOut",
+  })
+  .to("#clipPath", {
+    clipPath: "circle(100% at 50% 50%)",
+    ease: "power1.inOut",
+  });
