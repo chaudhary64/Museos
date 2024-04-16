@@ -156,20 +156,25 @@ let tl = gsap.timeline({
 tl.to("#clipPath", {
   clipPath: "circle(13% at 28% 63%)",
   ease: "power1.inOut",
+  force3D: true, // Enable hardware acceleration
 })
   .to("#clipPath", {
     clipPath: "circle(13% at 62% 65%)",
     ease: "power1.inOut",
+    force3D: true, // Enable hardware acceleration
   })
   .to("#clipPath", {
     clipPath: "circle(9% at 47% 35%)",
     ease: "power1.inOut",
+    force3D: true, // Enable hardware acceleration
   })
   .to("#clipPath", {
     clipPath: "circle(10% at 14% 58%)",
     ease: "power1.inOut",
+    force3D: true, // Enable hardware acceleration
   })
   .to("#clipPath", {
     clipPath: "circle(100% at 50% 50%)",
     ease: "power1.inOut",
+    force3D: true, // Enable hardware acceleration
   });
