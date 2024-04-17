@@ -160,6 +160,11 @@ function pinnedSectionAnimation() {
   });
 
   tl.to("#clipPath", {
+    clipPath: "circle(13% at 58% 25%)",
+    ease: "power1.inOut",
+    force3D: true, // Enable hardware acceleration
+  })
+  .to("#clipPath", {
     clipPath: "circle(13% at 53% 63%)",
     ease: "power1.inOut",
     force3D: true, // Enable hardware acceleration
