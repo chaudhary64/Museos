@@ -146,6 +146,21 @@ CoverTheStrip();
 function pinnedSectionAnimation() {
   let pb = document.querySelector("#progressBar");
 
+  let descriptionData = {
+    data1:
+      "In the foreground, we see a woman with Caucasian features representing the homeland—a white, pure, radiant, and civilized homeland ascending triumphantly. Created in the image and likeness of a Europe that embodies everything the nation should admire and pursue for success.",
+    data2:
+      "She is seated on a rock, at a higher level than the rest of the symbolic elements. She has a fabric draped over her body with the stripes of the national flag printed on it, stained with the blood of the Charrúa people. A flag that represents the patrician project of a nation-state born from the Charrúa genocide.",
+    data3:
+      "In the background or second layer, we see the stereotyped figure of an indigenous person in a fallen posture, looking up at the resplendent homeland.",
+    data4:
+      "The woman is sitting on a jaguar skin, perhaps a rug that the indigenous person obediently placed for her to sit on. The jaguar skin represents the most dangerous and wild animal of these lands, which the indigenous person killed for and because of her.",
+    data5:
+      "The figure of the Montevideo Hill fortress symbolizes for us the planting of the Spanish flag over the Charrúa people who fiercely resisted the establishment of this fort, symbolizing the beginning of settler colonialism, territorial dispossession.",
+    data6:
+      "Finally, we see the presence of a steamship in the bay of Montevideo, the means of transportation by which immigrants arrived to colonize these lands.",
+  };
+
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#PinnedSection",
@@ -166,18 +181,21 @@ function pinnedSectionAnimation() {
       clipPath: "circle(13% at 58% 25%)",
       ease: "power1.inOut",
       force3D: true, // Enable hardware acceleration
+      onStart: function () {
+        descriptionPositionSetter(1, 60, descriptionData.data1, 50);
+      },
     },
     "[ 1 ]"
   )
     .to(
-      "#heading",
+      ["#heading", "#descriptionContainer"],
       {
         opacity: 1,
       },
       "[ 1 ]"
     )
     // Changing the text when the opacity is 0
-    .to("#heading", {
+    .to(["#heading", "#descriptionContainer"], {
       opacity: 0,
       onComplete: function () {
         changeTheHeading("[ 2 ]", "White woman");
@@ -191,21 +209,25 @@ function pinnedSectionAnimation() {
         clipPath: "circle(13% at 53% 63%)",
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
+        onStart: function () {
+          descriptionPositionSetter(1, 13, descriptionData.data2, 35);
+        },
         onReverseComplete: function () {
           changeTheHeading("[ 1 ]", "White woman");
+          descriptionPositionSetter(1, 60, descriptionData.data1, 50);
         },
       },
       "[ 2 ]"
     )
     .to(
-      "#heading",
+      ["#heading", "#descriptionContainer"],
       {
         opacity: 1,
       },
       "[ 2 ]"
     )
     // Changing the text when the opacity is 0
-    .to("#heading", {
+    .to(["#heading", "#descriptionContainer"], {
       opacity: 0,
       onComplete: function () {
         changeTheHeading("[ 3 ]", "Charrua Indigenous");
@@ -219,21 +241,25 @@ function pinnedSectionAnimation() {
         clipPath: "circle(13% at 28% 63%)",
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
+        onStart: function () {
+          descriptionPositionSetter(1, 13, descriptionData.data3, 42);
+        },
         onReverseComplete: function () {
           changeTheHeading("[ 2 ]", "White woman");
+          descriptionPositionSetter(1, 13, descriptionData.data2, 35);
         },
       },
       "[ 3 ]"
     )
     .to(
-      "#heading",
+      ["#heading", "#descriptionContainer"],
       {
         opacity: 1,
       },
       "[ 3 ]"
     )
     // Changing the text when the opacity is 0
-    .to("#heading", {
+    .to(["#heading", "#descriptionContainer"], {
       opacity: 0,
       onComplete: function () {
         changeTheHeading("[ 4 ]", "Jaguar");
@@ -247,21 +273,25 @@ function pinnedSectionAnimation() {
         clipPath: "circle(13% at 62% 65%)",
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
+        onStart: function () {
+          descriptionPositionSetter(1, 13, descriptionData.data4, 40);
+        },
         onReverseComplete: function () {
           changeTheHeading("[ 3 ]", "Charrua Indigenous");
+          descriptionPositionSetter(1, 13, descriptionData.data3, 42);
         },
       },
       "[ 4 ]"
     )
     .to(
-      "#heading",
+      ["#heading", "#descriptionContainer"],
       {
         opacity: 1,
       },
       "[ 4 ]"
     )
     // Changing the text when the opacity is 0
-    .to("#heading", {
+    .to(["#heading", "#descriptionContainer"], {
       opacity: 0,
       onComplete: function () {
         changeTheHeading("[ 5 ]", "Montevideo Hill");
@@ -275,21 +305,26 @@ function pinnedSectionAnimation() {
         clipPath: "circle(9% at 47% 35%)",
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
+        onStart: function () {
+          descriptionPositionSetter(50, 60, descriptionData.data5, 47);
+        },
         onReverseComplete: function () {
           changeTheHeading("[ 4 ]", "Jaguar");
+          descriptionPositionSetter(1, 13, descriptionData.data4, 40);
         },
       },
       "[ 5 ]"
     )
     .to(
-      "#heading",
+      ["#heading", "#descriptionContainer"],
       {
         opacity: 1,
+        delay: 0.28,
       },
       "[ 5 ]"
     )
     // Changing the text when the opacity is 0
-    .to("#heading", {
+    .to(["#heading", "#descriptionContainer"], {
       opacity: 0,
       onComplete: function () {
         changeTheHeading("[ 6 ]", "Ship");
@@ -303,21 +338,25 @@ function pinnedSectionAnimation() {
         clipPath: "circle(10% at 14% 58%)",
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
+        onStart: function () {
+          descriptionPositionSetter(50, 20, descriptionData.data6, 47);
+        },
         onReverseComplete: function () {
           changeTheHeading("[ 5 ]", "Montevideo Hill");
+          descriptionPositionSetter(50, 60, descriptionData.data5, 47);
         },
       },
       "[ 6 ]"
     )
     .to(
-      "#heading",
+      ["#heading", "#descriptionContainer"],
       {
         opacity: 1,
       },
       "[ 6 ]"
     )
     // Changing the text when the opacity is 0
-    .to("#heading", {
+    .to(["#heading", "#descriptionContainer"], {
       opacity: 0,
     })
     .to("#clipPath", {
@@ -325,14 +364,25 @@ function pinnedSectionAnimation() {
       ease: "power1.inOut",
       force3D: true, // Enable hardware acceleration
     });
+
+  function changeTheHeading(number, heading) {
+    let numberForPinnedSection = document.querySelector(
+      "#numberForPinnedSection"
+    );
+    let headingForPinnedSection = document.querySelector(
+      "#textForPinnedSection"
+    );
+    numberForPinnedSection.innerText = number;
+    headingForPinnedSection.innerText = heading;
+  }
+
+  function descriptionPositionSetter(x, y, text, w) {
+    let description = document.querySelector("#description");
+    let descriptionContainer = document.querySelector("#descriptionContainer");
+    description.style.left = x + "%";
+    description.style.top = y + "%";
+    descriptionContainer.innerText = text;
+    description.style.width = w + "%";
+  }
 }
 pinnedSectionAnimation();
-
-function changeTheHeading(number, heading) {
-  let numberForPinnedSection = document.querySelector(
-    "#numberForPinnedSection"
-  );
-  let headingForPinnedSection = document.querySelector("#textForPinnedSection");
-  numberForPinnedSection.innerText = number;
-  headingForPinnedSection.innerText = heading;
-}
