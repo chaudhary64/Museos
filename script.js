@@ -159,35 +159,166 @@ function pinnedSectionAnimation() {
     },
   });
 
-  tl.to("#clipPath", {
-    clipPath: "circle(13% at 58% 25%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
-  })
-  .to("#clipPath", {
-    clipPath: "circle(13% at 53% 63%)",
-    ease: "power1.inOut",
-    force3D: true, // Enable hardware acceleration
-  })
-    .to("#clipPath", {
-      clipPath: "circle(13% at 28% 63%)",
+  // Firts Animation in timeline
+  tl.to(
+    "#clipPath",
+    {
+      clipPath: "circle(13% at 58% 25%)",
       ease: "power1.inOut",
       force3D: true, // Enable hardware acceleration
+    },
+    "[ 1 ]"
+  )
+    .to(
+      "#heading",
+      {
+        opacity: 1,
+      },
+      "[ 1 ]"
+    )
+    // Changing the text when the opacity is 0
+    .to("#heading", {
+      opacity: 0,
+      onComplete: function () {
+        changeTheHeading("[ 2 ]", "White woman");
+      },
     })
-    .to("#clipPath", {
-      clipPath: "circle(13% at 62% 65%)",
-      ease: "power1.inOut",
-      force3D: true, // Enable hardware acceleration
+
+    // Second Animation in timeline
+    .to(
+      "#clipPath",
+      {
+        clipPath: "circle(13% at 53% 63%)",
+        ease: "power1.inOut",
+        force3D: true, // Enable hardware acceleration
+        onReverseComplete: function () {
+          changeTheHeading("[ 1 ]", "White woman");
+        },
+      },
+      "[ 2 ]"
+    )
+    .to(
+      "#heading",
+      {
+        opacity: 1,
+      },
+      "[ 2 ]"
+    )
+    // Changing the text when the opacity is 0
+    .to("#heading", {
+      opacity: 0,
+      onComplete: function () {
+        changeTheHeading("[ 3 ]", "Charrua Indigenous");
+      },
     })
-    .to("#clipPath", {
-      clipPath: "circle(9% at 47% 35%)",
-      ease: "power1.inOut",
-      force3D: true, // Enable hardware acceleration
+
+    // Third Animation in timeline
+    .to(
+      "#clipPath",
+      {
+        clipPath: "circle(13% at 28% 63%)",
+        ease: "power1.inOut",
+        force3D: true, // Enable hardware acceleration
+        onReverseComplete: function () {
+          changeTheHeading("[ 2 ]", "White woman");
+        },
+      },
+      "[ 3 ]"
+    )
+    .to(
+      "#heading",
+      {
+        opacity: 1,
+      },
+      "[ 3 ]"
+    )
+    // Changing the text when the opacity is 0
+    .to("#heading", {
+      opacity: 0,
+      onComplete: function () {
+        changeTheHeading("[ 4 ]", "Jaguar");
+      },
     })
-    .to("#clipPath", {
-      clipPath: "circle(10% at 14% 58%)",
-      ease: "power1.inOut",
-      force3D: true, // Enable hardware acceleration
+
+    // Fourth Animation in timeline
+    .to(
+      "#clipPath",
+      {
+        clipPath: "circle(13% at 62% 65%)",
+        ease: "power1.inOut",
+        force3D: true, // Enable hardware acceleration
+        onReverseComplete: function () {
+          changeTheHeading("[ 3 ]", "Charrua Indigenous");
+        },
+      },
+      "[ 4 ]"
+    )
+    .to(
+      "#heading",
+      {
+        opacity: 1,
+      },
+      "[ 4 ]"
+    )
+    // Changing the text when the opacity is 0
+    .to("#heading", {
+      opacity: 0,
+      onComplete: function () {
+        changeTheHeading("[ 5 ]", "Montevideo Hill");
+      },
+    })
+
+    // Fifth Animation in timeline
+    .to(
+      "#clipPath",
+      {
+        clipPath: "circle(9% at 47% 35%)",
+        ease: "power1.inOut",
+        force3D: true, // Enable hardware acceleration
+        onReverseComplete: function () {
+          changeTheHeading("[ 4 ]", "Jaguar");
+        },
+      },
+      "[ 5 ]"
+    )
+    .to(
+      "#heading",
+      {
+        opacity: 1,
+      },
+      "[ 5 ]"
+    )
+    // Changing the text when the opacity is 0
+    .to("#heading", {
+      opacity: 0,
+      onComplete: function () {
+        changeTheHeading("[ 6 ]", "Ship");
+      },
+    })
+
+    // Sixth Animation in timeline
+    .to(
+      "#clipPath",
+      {
+        clipPath: "circle(10% at 14% 58%)",
+        ease: "power1.inOut",
+        force3D: true, // Enable hardware acceleration
+        onReverseComplete: function () {
+          changeTheHeading("[ 5 ]", "Montevideo Hill");
+        },
+      },
+      "[ 6 ]"
+    )
+    .to(
+      "#heading",
+      {
+        opacity: 1,
+      },
+      "[ 6 ]"
+    )
+    // Changing the text when the opacity is 0
+    .to("#heading", {
+      opacity: 0,
     })
     .to("#clipPath", {
       clipPath: "circle(100% at 50% 50%)",
@@ -196,3 +327,12 @@ function pinnedSectionAnimation() {
     });
 }
 pinnedSectionAnimation();
+
+function changeTheHeading(number, heading) {
+  let numberForPinnedSection = document.querySelector(
+    "#numberForPinnedSection"
+  );
+  let headingForPinnedSection = document.querySelector("#textForPinnedSection");
+  numberForPinnedSection.innerText = number;
+  headingForPinnedSection.innerText = heading;
+}
