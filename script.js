@@ -387,3 +387,14 @@ function pinnedSectionAnimation() {
   }
 }
 pinnedSectionAnimation();
+
+function popUp() {
+  let descriptionContainer = document.querySelector("#descriptionContainer");
+  descriptionContainer.style.top = "0%";
+  descriptionContainer.style.transition = "top 0.5s ease-in-out";
+}
+
+function popDown() {
+  let descriptionContainer = document.querySelector("#descriptionContainer");
+  descriptionContainer.style.top = "100%";
+}
