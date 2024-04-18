@@ -182,7 +182,7 @@ function pinnedSectionAnimation() {
       ease: "power1.inOut",
       force3D: true, // Enable hardware acceleration
       onStart: function () {
-        descriptionPositionSetter(1, 60, descriptionData.data1, 50);
+        descriptionPositionSetter(1, 60, descriptionData.data1, 50, 25);
       },
     },
     "[ 1 ]"
@@ -210,11 +210,11 @@ function pinnedSectionAnimation() {
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
         onStart: function () {
-          descriptionPositionSetter(1, 13, descriptionData.data2, 35);
+          descriptionPositionSetter(1, 13, descriptionData.data2, 35, 33);
         },
         onReverseComplete: function () {
           changeTheHeading("[ 1 ]", "White woman");
-          descriptionPositionSetter(1, 60, descriptionData.data1, 50);
+          descriptionPositionSetter(1, 60, descriptionData.data1, 50, 25);
         },
       },
       "[ 2 ]"
@@ -242,11 +242,11 @@ function pinnedSectionAnimation() {
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
         onStart: function () {
-          descriptionPositionSetter(1, 13, descriptionData.data3, 42);
+          descriptionPositionSetter(1, 13, descriptionData.data3, 42, 15);
         },
         onReverseComplete: function () {
           changeTheHeading("[ 2 ]", "White woman");
-          descriptionPositionSetter(1, 13, descriptionData.data2, 35);
+          descriptionPositionSetter(1, 13, descriptionData.data2, 35, 33);
         },
       },
       "[ 3 ]"
@@ -274,11 +274,11 @@ function pinnedSectionAnimation() {
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
         onStart: function () {
-          descriptionPositionSetter(1, 13, descriptionData.data4, 40);
+          descriptionPositionSetter(1, 13, descriptionData.data4, 40, 28);
         },
         onReverseComplete: function () {
           changeTheHeading("[ 3 ]", "Charrua Indigenous");
-          descriptionPositionSetter(1, 13, descriptionData.data3, 42);
+          descriptionPositionSetter(1, 13, descriptionData.data3, 42, 15);
         },
       },
       "[ 4 ]"
@@ -306,11 +306,11 @@ function pinnedSectionAnimation() {
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
         onStart: function () {
-          descriptionPositionSetter(50, 60, descriptionData.data5, 47);
+          descriptionPositionSetter(50, 60, descriptionData.data5, 47, 20);
         },
         onReverseComplete: function () {
           changeTheHeading("[ 4 ]", "Jaguar");
-          descriptionPositionSetter(1, 13, descriptionData.data4, 40);
+          descriptionPositionSetter(1, 13, descriptionData.data4, 40, 28);
         },
       },
       "[ 5 ]"
@@ -339,11 +339,11 @@ function pinnedSectionAnimation() {
         ease: "power1.inOut",
         force3D: true, // Enable hardware acceleration
         onStart: function () {
-          descriptionPositionSetter(50, 20, descriptionData.data6, 47);
+          descriptionPositionSetter(50, 20, descriptionData.data6, 47, 15);
         },
         onReverseComplete: function () {
           changeTheHeading("[ 5 ]", "Montevideo Hill");
-          descriptionPositionSetter(50, 60, descriptionData.data5, 47);
+          descriptionPositionSetter(50, 60, descriptionData.data5, 47, 20);
         },
       },
       "[ 6 ]"
@@ -376,11 +376,12 @@ function pinnedSectionAnimation() {
     headingForPinnedSection.innerText = heading;
   }
 
-  function descriptionPositionSetter(x, y, text, w) {
+  function descriptionPositionSetter(x, y, text, w, h) {
     let description = document.querySelector("#description");
     let descriptionContainer = document.querySelector("#descriptionContainer");
     description.style.left = x + "%";
     description.style.top = y + "%";
+    description.style.height = h + "%";
     descriptionContainer.innerText = text;
     description.style.width = w + "%";
   }
