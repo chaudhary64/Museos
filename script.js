@@ -183,31 +183,39 @@ function pinnedSectionAnimation() {
       force3D: true, // Enable hardware acceleration
       onStart: function () {
         descriptionPositionSetter(1, 60, descriptionData.data1, 50, 25);
-        popUp();
-      },
-      onReverseComplete: function () {
-        popDown();
       },
     },
     "[ 1 ]"
   )
     .to(
-      ["#heading", "#descriptionContainer"],
+      "#heading",
       {
         opacity: 1,
+        ease: "power1.inOut",
+      },
+      "[ 1 ]"
+    )
+    .to(
+      "#descriptionContainer",
+      {
+        opacity: 1,
+        top: "0%",
+        ease: "power1.inOut",
       },
       "[ 1 ]"
     )
     // Changing the text when the opacity is 0
-    .to(["#heading", "#descriptionContainer"], {
+    .to("#heading", {
       opacity: 0,
+      ease: "power1.inOut",
       onComplete: function () {
         changeTheHeading("[ 2 ]", "White woman");
-        popDown();
       },
-      onReverseComplete: function () {
-        popUp();
-      },
+    })
+    .to("#descriptionContainer", {
+      opacity: 0,
+      ease: "power1.inOut",
+      top: "100%",
     })
 
     // Second Animation in timeline
@@ -219,33 +227,43 @@ function pinnedSectionAnimation() {
         force3D: true, // Enable hardware acceleration
         onStart: function () {
           descriptionPositionSetter(1, 13, descriptionData.data2, 35, 33);
-          popUp();
         },
         onReverseComplete: function () {
           changeTheHeading("[ 1 ]", "White woman");
           descriptionPositionSetter(1, 60, descriptionData.data1, 50, 25);
-          popDown();
         },
       },
       "[ 2 ]"
     )
     .to(
-      ["#heading", "#descriptionContainer"],
+      "#heading",
       {
         opacity: 1,
+        ease: "power1.inOut",
+      },
+      "[ 2 ]"
+    )
+    .to(
+      "#descriptionContainer",
+      {
+        opacity: 1,
+        top: "0%",
+        ease: "power1.inOut",
       },
       "[ 2 ]"
     )
     // Changing the text when the opacity is 0
-    .to(["#heading", "#descriptionContainer"], {
+    .to("#heading", {
       opacity: 0,
+      ease: "power1.inOut",
       onComplete: function () {
         changeTheHeading("[ 3 ]", "Charrua Indigenous");
-        popDown();
       },
-      onReverseComplete: function () {
-        popUp();
-      },
+    })
+    .to("#descriptionContainer", {
+      opacity: 0,
+      top: "100%",
+      ease: "power1.inOut",
     })
 
     // Third Animation in timeline
@@ -257,33 +275,43 @@ function pinnedSectionAnimation() {
         force3D: true, // Enable hardware acceleration
         onStart: function () {
           descriptionPositionSetter(1, 13, descriptionData.data3, 42, 15);
-          popUp();
         },
         onReverseComplete: function () {
           changeTheHeading("[ 2 ]", "White woman");
           descriptionPositionSetter(1, 13, descriptionData.data2, 35, 33);
-          popDown();
         },
       },
       "[ 3 ]"
     )
     .to(
-      ["#heading", "#descriptionContainer"],
+      "#heading",
       {
         opacity: 1,
+        ease: "power1.inOut",
+      },
+      "[ 3 ]"
+    )
+    .to(
+      "#descriptionContainer",
+      {
+        opacity: 1,
+        top: "0%",
+        ease: "power1.inOut",
       },
       "[ 3 ]"
     )
     // Changing the text when the opacity is 0
-    .to(["#heading", "#descriptionContainer"], {
+    .to("#heading", {
       opacity: 0,
+      ease: "power1.inOut",
       onComplete: function () {
         changeTheHeading("[ 4 ]", "Jaguar");
-        popDown();
       },
-      onReverseComplete: function () {
-        popUp();
-      },
+    })
+    .to("#descriptionContainer", {
+      opacity: 0,
+      top: "100%",
+      ease: "power1.inOut",
     })
 
     // Fourth Animation in timeline
@@ -295,33 +323,43 @@ function pinnedSectionAnimation() {
         force3D: true, // Enable hardware acceleration
         onStart: function () {
           descriptionPositionSetter(1, 13, descriptionData.data4, 40, 28);
-          popUp();
         },
         onReverseComplete: function () {
           changeTheHeading("[ 3 ]", "Charrua Indigenous");
           descriptionPositionSetter(1, 13, descriptionData.data3, 42, 15);
-          popDown();
         },
       },
       "[ 4 ]"
     )
     .to(
-      ["#heading", "#descriptionContainer"],
+      "#heading",
       {
         opacity: 1,
+        ease: "power1.inOut",
+      },
+      "[ 4 ]"
+    )
+    .to(
+      "#descriptionContainer",
+      {
+        opacity: 1,
+        top: "0%",
+        ease: "power1.inOut",
       },
       "[ 4 ]"
     )
     // Changing the text when the opacity is 0
-    .to(["#heading", "#descriptionContainer"], {
+    .to("#heading", {
       opacity: 0,
+      ease: "power1.inOut",
       onComplete: function () {
         changeTheHeading("[ 5 ]", "Montevideo Hill");
-        popDown();
       },
-      onReverseComplete: function () {
-        popUp();
-      },
+    })
+    .to("#descriptionContainer", {
+      opacity: 0,
+      top: "100%",
+      ease: "power1.inOut",
     })
 
     // Fifth Animation in timeline
@@ -333,34 +371,45 @@ function pinnedSectionAnimation() {
         force3D: true, // Enable hardware acceleration
         onStart: function () {
           descriptionPositionSetter(50, 60, descriptionData.data5, 47, 20);
-          popUp();
         },
         onReverseComplete: function () {
           changeTheHeading("[ 4 ]", "Jaguar");
           descriptionPositionSetter(1, 13, descriptionData.data4, 40, 28);
-          popDown();
         },
       },
       "[ 5 ]"
     )
     .to(
-      ["#heading", "#descriptionContainer"],
+      "#heading",
       {
         opacity: 1,
         delay: 0.28,
+        ease: "power1.inOut",
+      },
+      "[ 5 ]"
+    )
+    .to(
+      "#descriptionContainer",
+      {
+        opacity: 1,
+        delay: 0.28,
+        top: "0%",
+        ease: "power1.inOut",
       },
       "[ 5 ]"
     )
     // Changing the text when the opacity is 0
-    .to(["#heading", "#descriptionContainer"], {
+    .to("#heading", {
       opacity: 0,
+      ease: "power1.inOut",
       onComplete: function () {
         changeTheHeading("[ 6 ]", "Ship");
-        popDown();
       },
-      onReverseComplete: function () {
-        popUp();
-      },
+    })
+    .to("#descriptionContainer", {
+      opacity: 0,
+      top: "100%",
+      ease: "power1.inOut",
     })
 
     // Sixth Animation in timeline
@@ -372,37 +421,45 @@ function pinnedSectionAnimation() {
         force3D: true, // Enable hardware acceleration
         onStart: function () {
           descriptionPositionSetter(50, 20, descriptionData.data6, 47, 15);
-          popUp();
         },
         onReverseComplete: function () {
           changeTheHeading("[ 5 ]", "Montevideo Hill");
           descriptionPositionSetter(50, 60, descriptionData.data5, 47, 20);
-          popDown();
         },
       },
       "[ 6 ]"
     )
     .to(
-      ["#heading", "#descriptionContainer"],
+      "#heading",
       {
         opacity: 1,
+        ease: "power1.inOut",
+      },
+      "[ 6 ]"
+    )
+    .to(
+      "#descriptionContainer",
+      {
+        opacity: 1,
+        top: "0%",
+        ease: "power1.inOut",
       },
       "[ 6 ]"
     )
     // Changing the text when the opacity is 0
-    .to(["#heading", "#descriptionContainer"], {
+    .to("#heading", {
       opacity: 0,
-      onComplete: function () {
-        popDown();
-      },
+      ease: "power1.inOut",
+    })
+    .to("#descriptionContainer", {
+      opacity: 0,
+      top: "100%",
+      ease: "power1.inOut",
     })
     .to("#clipPath", {
       clipPath: "circle(100% at 50% 50%)",
       ease: "power1.inOut",
       force3D: true, // Enable hardware acceleration
-      onReverseComplete: function () {
-        popUp();
-      },
     });
 
   function changeTheHeading(number, heading) {
@@ -424,22 +481,6 @@ function pinnedSectionAnimation() {
     description.style.height = h + "%";
     descriptionContainer.innerText = text;
     description.style.width = w + "%";
-  }
-
-  function popUp() {
-    gsap.to("#descriptionContainer", {
-      top: "0%",
-      duration: 0.5,
-      ease: "power1.inOut",
-    });
-  }
-
-  function popDown() {
-    gsap.to("#descriptionContainer", {
-      top: "100%",
-      duration: 0,
-      ease: "power1.inOut",
-    });
   }
 }
 pinnedSectionAnimation();
