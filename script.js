@@ -385,16 +385,21 @@ function pinnedSectionAnimation() {
     descriptionContainer.innerText = text;
     description.style.width = w + "%";
   }
+
+  function popUp() {
+    gsap.to("#descriptionContainer", {
+      top: "0%",
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+  }
+
+  function popDown() {
+    gsap.to("#descriptionContainer", {
+      top: "100%",
+      duration: 0,
+      ease: "power1.inOut",
+    });
+  }
 }
 pinnedSectionAnimation();
-
-function popUp() {
-  let descriptionContainer = document.querySelector("#descriptionContainer");
-  descriptionContainer.style.top = "0%";
-  descriptionContainer.style.transition = "top 0.5s ease-in-out";
-}
-
-function popDown() {
-  let descriptionContainer = document.querySelector("#descriptionContainer");
-  descriptionContainer.style.top = "100%";
-}
