@@ -184,7 +184,9 @@ function pinnedSectionAnimation() {
       onStart: function () {
         descriptionPositionSetter(1, 60, descriptionData.data1, 50, 25);
         popUp();
-        // alert("Scroll Down to see the animation");
+      },
+      onReverseComplete: function () {
+        popDown();
       },
     },
     "[ 1 ]"
@@ -204,9 +206,7 @@ function pinnedSectionAnimation() {
         popDown();
       },
       onReverseComplete: function () {
-        setTimeout(() => {
-          popDown();
-        }, 500);
+        popUp();
       },
     })
 
@@ -224,6 +224,7 @@ function pinnedSectionAnimation() {
         onReverseComplete: function () {
           changeTheHeading("[ 1 ]", "White woman");
           descriptionPositionSetter(1, 60, descriptionData.data1, 50, 25);
+          popDown();
         },
       },
       "[ 2 ]"
@@ -242,6 +243,9 @@ function pinnedSectionAnimation() {
         changeTheHeading("[ 3 ]", "Charrua Indigenous");
         popDown();
       },
+      onReverseComplete: function () {
+        popUp();
+      },
     })
 
     // Third Animation in timeline
@@ -258,6 +262,7 @@ function pinnedSectionAnimation() {
         onReverseComplete: function () {
           changeTheHeading("[ 2 ]", "White woman");
           descriptionPositionSetter(1, 13, descriptionData.data2, 35, 33);
+          popDown();
         },
       },
       "[ 3 ]"
@@ -276,6 +281,9 @@ function pinnedSectionAnimation() {
         changeTheHeading("[ 4 ]", "Jaguar");
         popDown();
       },
+      onReverseComplete: function () {
+        popUp();
+      },
     })
 
     // Fourth Animation in timeline
@@ -292,6 +300,7 @@ function pinnedSectionAnimation() {
         onReverseComplete: function () {
           changeTheHeading("[ 3 ]", "Charrua Indigenous");
           descriptionPositionSetter(1, 13, descriptionData.data3, 42, 15);
+          popDown();
         },
       },
       "[ 4 ]"
@@ -310,6 +319,9 @@ function pinnedSectionAnimation() {
         changeTheHeading("[ 5 ]", "Montevideo Hill");
         popDown();
       },
+      onReverseComplete: function () {
+        popUp();
+      },
     })
 
     // Fifth Animation in timeline
@@ -326,6 +338,7 @@ function pinnedSectionAnimation() {
         onReverseComplete: function () {
           changeTheHeading("[ 4 ]", "Jaguar");
           descriptionPositionSetter(1, 13, descriptionData.data4, 40, 28);
+          popDown();
         },
       },
       "[ 5 ]"
@@ -345,6 +358,9 @@ function pinnedSectionAnimation() {
         changeTheHeading("[ 6 ]", "Ship");
         popDown();
       },
+      onReverseComplete: function () {
+        popUp();
+      },
     })
 
     // Sixth Animation in timeline
@@ -361,6 +377,7 @@ function pinnedSectionAnimation() {
         onReverseComplete: function () {
           changeTheHeading("[ 5 ]", "Montevideo Hill");
           descriptionPositionSetter(50, 60, descriptionData.data5, 47, 20);
+          popDown();
         },
       },
       "[ 6 ]"
@@ -383,6 +400,9 @@ function pinnedSectionAnimation() {
       clipPath: "circle(100% at 50% 50%)",
       ease: "power1.inOut",
       force3D: true, // Enable hardware acceleration
+      onReverseComplete: function () {
+        popUp();
+      },
     });
 
   function changeTheHeading(number, heading) {
