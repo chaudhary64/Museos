@@ -146,6 +146,44 @@ CoverTheStrip();
 function pinnedSectionAnimation() {
   let pb = document.querySelector("#progressBar");
 
+  let cp = document.querySelector("#clipPath");
+  let clickedListener = document.querySelector("#clickedListener");
+
+  // Variables to store the initial radius percentage and coordinates of the circle
+  let start;
+  let end;
+  let initialRadiusPercentage;
+  let coordinates;
+  let startCoordinates;
+  let endCoordinates;
+
+  function increaseOrDecreaseRadiusOnMouseHold() {
+    const animation = gsap.to("#clipPath", {
+      clipPath: "circle(100% at 50% 50%)",
+      ease: "power1.inOut",
+      duration: 1.8,
+      onStart: () => {
+        // To ensure that after reaching 100% the mouseup event stops working
+        if (initialRadiusPercentage != 100) {
+          document.addEventListener("mouseup", () => {
+            // Stop the ongoing animation
+            animation.kill();
+            gsap.to("#clipPath", {
+              clipPath: `circle(${initialRadiusPercentage}% at ${coordinates})`,
+              ease: "power1.inOut",
+              duration: 0.5,
+            });
+          });
+        }
+      },
+    });
+  }
+
+  // Mouse down event listener which increase or decrease the radius of the circle
+  clickedListener.addEventListener("mousedown", () => {
+    increaseOrDecreaseRadiusOnMouseHold();
+  });
+
   let descriptionData = {
     data1:
       "In the foreground, we see a woman with Caucasian features representing the homeland—a white, pure, radiant, and civilized homeland ascending triumphantly. Created in the image and likeness of a Europe that embodies everything the nation should admire and pursue for success.",
@@ -170,6 +208,22 @@ function pinnedSectionAnimation() {
       pin: true,
       onUpdate: (self) => {
         pb.style.width = self.progress.toFixed(2) * 100 + "%"; // Gettin the progress value and converting it to percentage
+
+        // Getting the new coordinates of the circle while animating
+        startCoordinates = getComputedStyle(cp).clipPath.indexOf("at") + 3;
+        endCoordinates = getComputedStyle(cp).clipPath.lastIndexOf(")");
+        coordinates = getComputedStyle(cp).clipPath.slice(
+          startCoordinates,
+          endCoordinates
+        );
+
+        // Getting the initial radius percentage of the circle while animating
+        start = getComputedStyle(cp).clipPath.indexOf("(");
+        end = getComputedStyle(cp).clipPath.indexOf("%");
+        initialRadiusPercentage = getComputedStyle(cp).clipPath.slice(
+          start + 1,
+          end
+        );
       },
     },
   });
