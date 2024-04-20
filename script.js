@@ -538,3 +538,19 @@ function pinnedSectionAnimation() {
   }
 }
 pinnedSectionAnimation();
+
+function HourseAnimation() {
+  gsap.to("#HourseImg", {
+    scale: 1.5,
+    transform: "translate(0%,-20%)",
+    scrollTrigger: {
+      trigger: "#HourseImgWrapper",
+      start: "top 80%",
+      end: "bottom 50%",
+      scrub: 2,
+      ease: "power1.inOut",
+      // markers : true
+    },
+  });
+}
+HourseAnimation();

@@ -69,6 +69,6 @@ body {
     clip-path: circle(0% at 58% 25%);
 }
 
-#progressBar{
-    transition: width 0.8s linear; 
+#progressBar {
+    transition: width 0.8s linear;
 }
