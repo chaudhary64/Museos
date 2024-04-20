@@ -554,3 +554,19 @@ function HourseAnimation() {
   });
 }
 HourseAnimation();
+
+function jmbParaAppearingAnimation() {
+  gsap.to(["#firstPara", "#secondPara", "#thirdPara"], {
+    top: "0%",
+    opacity: 1,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: "#JMB",
+      start: "top 80%",
+      end: "bottom 65%",
+      scrub: 2,
+      ease: "power1.inOut",
+    },
+  });
+}
+jmbParaAppearingAnimation();
