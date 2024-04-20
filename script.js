@@ -570,3 +570,18 @@ function jmbParaAppearingAnimation() {
   });
 }
 jmbParaAppearingAnimation();
+
+function ourInitiativesAnimation() {
+  gsap.to("#Initiative p", {
+    top: "0%",
+    opacity: 1,
+    scrollTrigger: {
+      trigger: "#Initiative",
+      start: "top 80%",
+      end: "bottom 65%",
+      scrub: 3,
+      ease: "power1.inOut",
+    },
+  });
+}
+ourInitiativesAnimation();
