@@ -585,3 +585,32 @@ function ourInitiativesAnimation() {
   });
 }
 ourInitiativesAnimation();
+
+function shpaeChangingAnimation() {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#polygonContainer",
+      start: "top 80%",
+      end: "bottom 40%",
+      scrub: 1,
+      eaase: "none",
+    },
+  });
+
+  tl.to(
+    "#shapeChanger",
+    {
+      clipPath:
+        "polygon(0px 0px, 100% 0px, 61.7428% 70%, 61.7428% 100%, 38.2572% 100%, 38.2572% 70%)",
+    },
+    "shapeChangerAnimation"
+  ).to(
+    "#shapeChanger img",
+    {
+      scale: 1,
+      transform: "translate(0%,0%)",
+    },
+    "shapeChangerAnimation"
+  );
+}
+shpaeChangingAnimation();

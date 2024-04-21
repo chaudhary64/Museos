@@ -72,3 +72,9 @@ body {
 #progressBar {
     transition: width 0.8s linear;
 }
+
+/* Setting the initial clip-path : polygon value */
+
+#shapeChanger {
+    clip-path: polygon(0px 0px, 100% 0px, 100% 70%, 100% 100%, 0px 100%, 0px 70%);
+}
