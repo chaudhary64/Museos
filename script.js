@@ -13,8 +13,6 @@ function coundown() {
 coundown();
 
 function LoaderRemover() {
-  let MainContent = document.querySelector(".MainContent");
-  let loader = document.querySelector(".Loader");
   let tl = gsap.timeline();
 
   tl.to(".Loader", {
