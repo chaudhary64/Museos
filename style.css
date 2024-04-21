@@ -78,3 +78,8 @@ body {
 #shapeChanger {
     clip-path: polygon(0px 0px, 100% 0px, 100% 70%, 100% 100%, 0px 100%, 0px 70%);
 }
+
+#followCursor {
+    transform: translate(-50%, -50%);
+    transition: opacity 0.1s ease-in-out;
+}

@@ -612,3 +612,44 @@ function shpaeChangingAnimation() {
   );
 }
 shpaeChangingAnimation();
+
+let followCursor = document.querySelector("#followCursor");
+
+let body = document.querySelector("body");
+
+let check = ["upperAndLowerImg", "centerImg", "clickedListener"];
+
+body.addEventListener("mousemove", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  followCursor.style.display = "inline-block";
+  followCursor.style.opacity = 1;
+
+  gsap.to(followCursor, {
+    x: x + "px",
+    y: y + "px",
+    duration: 0.25,
+  });
+
+  if (check.includes(e.target.id)) {
+    gsap.to(followCursor, {
+      scale: 0,
+      duration: 0.1,
+      ease: "power1.inOut",
+    });
+  } else {
+    gsap.to(followCursor, {
+      scale: 1,
+      duration: 0.1,
+      ease: "power1.inOut",
+    });
+  }
+});
+
+body.addEventListener("mouseleave", () => {
+  gsap.to(followCursor, {
+    scale: 0,
+    duration: 0.1,
+    ease: "power1.inOut",
+  });
+});
