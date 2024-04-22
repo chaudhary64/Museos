@@ -5,6 +5,18 @@
     font-family: "Noto Serif";
 }
 
+/* Font1 */
+@font-face {
+    font-family: 'untitled-serif-regular';
+    src: url(Font/untitled-serif-regular.ttf) format('truetype');
+}
+
+/* Font2 */
+@font-face {
+    font-family: 'untitled-sans-medium';
+    src: url(Font/untitled-sans-medium.ttf) format('truetype');
+}
+
 :root {
     --radius: 13%;
     --x: 50%;
