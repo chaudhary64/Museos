@@ -24,17 +24,33 @@ function LoaderRemover() {
       ScrollTrigger.refresh();
     },
   })
-    .to(["#jmb", "#wordSpaceReducing"], {
-      duration: 1.8,
-      top: 0,
-      delay: -1,
-    })
-    .to("nav p", {
-      top: 0,
-      duration: 1,
-      delay: -2.5,
-      stagger: 0.4,
-    });
+    .to(
+      ["#jmb", "#wordSpaceReducing"],
+      {
+        duration: 2,
+        top: 0,
+        delay: 0.1,
+      },
+      "togetherAnimate"
+    )
+    .from(
+      "#ImageContainer",
+      {
+        opacity: 0,
+        duration: 2.5,
+        delay: 0.3,
+      },
+      "togetherAnimate"
+    )
+    .to(
+      "nav p",
+      {
+        top: 0,
+        duration: 1.8,
+        delay: 0.5,
+      },
+      "togetherAnimate"
+    );
 }
 LoaderRemover();
 
