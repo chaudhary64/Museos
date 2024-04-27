@@ -17,6 +17,10 @@
     src: url(Font/untitled-sans-medium.ttf) format('truetype');
 }
 
+.sansFont {
+    font-family: 'untitled-sans-medium', 'Noto Sans';
+}
+
 :root {
     --radius: 13%;
     --x: 50%;
