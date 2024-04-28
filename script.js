@@ -637,8 +637,8 @@ function mouseFollowAnimation() {
   let check = ["upperAndLowerImg", "centerImg", "clickedListener"];
 
   body.addEventListener("mousemove", (e) => {
-    let x = e.pageX;
-    let y = e.pageY;
+    let x = e.x;
+    let y = e.y;
     followCursor.style.display = "inline-block";
     followCursor.style.opacity = 1;
 
