@@ -634,12 +634,12 @@ function mouseFollowAnimation() {
 
   let body = document.querySelector("body");
 
-  let check = ["upperAndLowerImg", "centerImg", "clickedListener"];
-
   body.addEventListener("mousemove", (e) => {
     let x = e.x;
     let y = e.y;
-    followCursor.style.display = "inline-block";
+    followCursor.style.display = "flex";
+    followCursor.style.justifyContent = "center";
+    followCursor.style.alignItems = "center";
     followCursor.style.opacity = 1;
 
     gsap.to(followCursor, {
@@ -648,18 +648,25 @@ function mouseFollowAnimation() {
       duration: 0.25,
     });
 
-    if (check.includes(e.target.id)) {
+    // Changing the content and backgrounColor of the followCursor
+
+    if (e.target.id === "clickedListener") {
+      followCursor.innerHTML = `<i
+      class="ri-add-fill text-white"></i>`;
       gsap.to(followCursor, {
-        scale: 0,
+        backgroundColor: "black",
+        scale: 1.8,
         duration: 0.1,
         ease: "power1.inOut",
       });
     } else {
-      gsap.to(followCursor, {
-        scale: 1,
-        duration: 0.1,
-        ease: "power1.inOut",
-      });
+      (followCursor.innerHTML = ``),
+        gsap.to(followCursor, {
+          backgroundColor: "white",
+          scale: 1,
+          duration: 0.1,
+          ease: "power1.inOut",
+        });
     }
   });
 
