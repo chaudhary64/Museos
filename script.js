@@ -187,6 +187,11 @@ function pinnedSectionAnimation() {
               ease: "power1.inOut",
               duration: 0.5,
             });
+            gsap.to("#followCursor", {
+              rotate: -90,
+              duration: 0.5,
+              ease: "power1.inOut",
+            });
           });
         }
       },
@@ -196,6 +201,11 @@ function pinnedSectionAnimation() {
   // Mouse down event listener which increase or decrease the radius of the circle
   clickedListener.addEventListener("mousedown", () => {
     increaseOrDecreaseRadiusOnMouseHold();
+    gsap.to("#followCursor", {
+      rotate: 90,
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
   });
 
   let descriptionData = {
